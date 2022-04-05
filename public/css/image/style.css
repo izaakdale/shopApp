@@ -1,0 +1,15 @@
+.productImage{
+  height: 300px;
+  width: 300px;
+}
+
+.homeImage{
+  text-align: center;
+  margin-top: 100px;
+}
+
+.homeImageSize{
+  height: 410px;
+  width: 1000px;
+
+}
