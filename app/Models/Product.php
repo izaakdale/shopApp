@@ -24,6 +24,5 @@ class Product extends Model
         'description',
         'image_url',
         'price',
-        'nutrition_info_id'
     ];
 }

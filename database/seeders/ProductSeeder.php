@@ -19,7 +19,6 @@ class ProductSeeder extends Seeder
      */
     public function run()
     {
-        // Product::factory()->create();
         $product = Product::factory()->tofu()->create();
         $this->createNutritionInfo($product);
 
