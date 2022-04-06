@@ -75,4 +75,64 @@ class ProductFactory extends Factory
             ];
         });
     }
+    public function soyMilk()
+    {
+        return $this->state(function (array $attributes)
+        {
+            return [
+                'name' => 'Soy Milk',
+                'description' => $this->faker->paragraph(),
+                'price' => 2.99,
+                'image_url' => 'images/products/soyMilk.png',
+            ];
+        });
+    }
+    public function oatMilk()
+    {
+        return $this->state(function (array $attributes)
+        {
+            return [
+                'name' => 'Oat Milk',
+                'description' => $this->faker->paragraph(),
+                'price' => 4.99,
+                'image_url' => 'images/products/oatMilk.png',
+            ];
+        });
+    }
+    public function beyondBurger()
+    {
+        return $this->state(function (array $attributes)
+        {
+            return [
+                'name' => 'Beyond Burger',
+                'description' => $this->faker->paragraph(),
+                'price' => 17.99,
+                'image_url' => 'images/products/beyondBurger.png',
+            ];
+        });
+    }
+    public function beyondSausage()
+    {
+        return $this->state(function (array $attributes)
+        {
+            return [
+                'name' => 'Beyond Sausage',
+                'description' => $this->faker->paragraph(),
+                'price' => 9.99,
+                'image_url' => 'images/products/beyondSausage.png',
+            ];
+        });
+    }
+    public function tempeh()
+    {
+        return $this->state(function (array $attributes)
+        {
+            return [
+                'name' => 'Tempeh',
+                'description' => $this->faker->paragraph(),
+                'price' => 6.99,
+                'image_url' => 'images/products/tempeh.png',
+            ];
+        });
+    }
 }

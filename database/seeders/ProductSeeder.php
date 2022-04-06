@@ -9,6 +9,9 @@ use Illuminate\Database\Seeder;
 
 class ProductSeeder extends Seeder
 {
+    public function createNutritionInfo($product){
+        NutritionInfo::factory()->create(['product_id' => $product->id]);
+    }
     /**
      * Run the database seeds.
      *
@@ -18,12 +21,32 @@ class ProductSeeder extends Seeder
     {
         // Product::factory()->create();
         $product = Product::factory()->tofu()->create();
-        NutritionInfo::factory()->create(['product_id' => $product->id]);
+        $this->createNutritionInfo($product);
+
         $product = Product::factory()->chickPeas()->create();
-        NutritionInfo::factory()->create(['product_id' => $product->id]);
+        $this->createNutritionInfo($product);
+
         $product = Product::factory()->blackBeans()->create();
-        NutritionInfo::factory()->create(['product_id' => $product->id]);
+        $this->createNutritionInfo($product);
+
         $product = Product::factory()->vega()->create();
-        NutritionInfo::factory()->create(['product_id' => $product->id]);
+        $this->createNutritionInfo($product);
+
+        $product = Product::factory()->tempeh()->create();
+        $this->createNutritionInfo($product);
+
+        $product = Product::factory()->soyMilk()->create();
+        $this->createNutritionInfo($product);
+
+        $product = Product::factory()->oatMilk()->create();
+        $this->createNutritionInfo($product);
+
+        $product = Product::factory()->beyondSausage()->create();
+        $this->createNutritionInfo($product);
+
+        $product = Product::factory()->beyondBurger()->create();
+        $this->createNutritionInfo($product);
+
     }
+
 }
