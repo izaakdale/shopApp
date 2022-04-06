@@ -8,7 +8,7 @@ use App\Models\Order;
 use App\Models\OrderItem;
 use App\Models\Product;
 use App\Models\User;
-use Psy\Formatter\Formatter;
+use Illuminate\Support\Facades\Gate as FacadesGate;
 
 class OrderController extends Controller
 {
@@ -26,7 +26,14 @@ class OrderController extends Controller
     public function index()
     {
         $user = User::find(auth()->user()->id);
-        $orders = $user->orders()->get();
+        if($user->is_admin)
+        {
+            $orders = Order::all();
+        }
+        else
+        {
+            $orders = $user->orders()->get();
+        }
 
         return view('order.index', ['orders' => $orders]);
     }
@@ -38,6 +45,7 @@ class OrderController extends Controller
      */
     public function create()
     {
+        $this->authorize('create', [Order::class]);
         return view('order.create');
     }
 
@@ -51,7 +59,6 @@ class OrderController extends Controller
     {
         if( $request->session()->has('cart') )
         {
-
             $order = New Order();
             $formInfo = $request->validated();
             $order->delivery_address = 
@@ -88,10 +95,13 @@ class OrderController extends Controller
      */
     public function show(Order $order)
     {
+        $this->authorize('view', [$order]);
+
         $orderItems = $order->orderItems()->get();
         $products = Product::findMany($orderItems->pluck('product_id'));
 
         return view('order.show', ['orderItems' => $orderItems, 'products' => $products]);
+
     }
 
     /**

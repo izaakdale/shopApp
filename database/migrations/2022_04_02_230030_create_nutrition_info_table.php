@@ -21,6 +21,9 @@ return new class extends Migration
             $table->float('protein');
             $table->float('calories');
 
+            $table->unsignedBigInteger('product_id');
+            $table->foreign('product_id')->references('id')->on('products');
+
             $table->timestamps();
         });
     }

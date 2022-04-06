@@ -50,8 +50,8 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        $nutritionInfo = NutritionInfo::with('product')->find($id);
-        return view('products.show', ['product' => Product::findOrFail($id), 'nutrition_info' => $nutritionInfo]);
+        $product = Product::with('nutrition_info')->findOrFail($id);
+        return view('products.show', ['product' => Product::findOrFail($id)]);
     }
 
     /**

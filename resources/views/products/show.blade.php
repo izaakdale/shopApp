@@ -22,8 +22,8 @@
                     <th>Calories kCal</th>
                 </tr>
                 <tr>
-                    <td>{{ $nutrition_info->protein }}</td>
-                    <td>{{ $nutrition_info->calories }}</td>
+                    <td>{{ $product->nutrition_info->protein }}</td>
+                    <td>{{ $product->nutrition_info->calories }}</td>
                 </tr>
                 <tr>
 

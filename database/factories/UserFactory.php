@@ -51,4 +51,16 @@ class UserFactory extends Factory
         ];
       });
     }
+
+    public function admin()
+    {
+      return $this->state(function(array $attributes){
+        return[
+          'name' => 'Administrator',
+          'email' => 'admin@example.net',
+          'password' => Hash::make('Password'),
+          'is_admin' => True
+        ];
+      });
+    }
 }

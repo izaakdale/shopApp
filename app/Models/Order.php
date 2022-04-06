@@ -25,4 +25,9 @@ class Order extends Model
         'dispatched',
     ];
 
+    public static function boot()
+    {
+        parent::boot();
+    }
+
 }

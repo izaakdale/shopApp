@@ -20,12 +20,10 @@ class ProductFactory extends Factory
 
     public function definition()
     {
-        $nutritionInfo = NutritionInfo::factory()->create();
         return [
             'name' => $this->faker->word(),
             'description' => $this->faker->paragraph(),
             'price' => random_int(1, 5) + 0.99,
-            'nutrition_info_id' => $nutritionInfo->id
         ];
     }
 

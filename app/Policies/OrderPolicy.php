@@ -18,7 +18,7 @@ class OrderPolicy
      */
     public function viewAny(User $user)
     {
-        //
+        return $user->is_admin;
     }
 
     /**
@@ -30,7 +30,7 @@ class OrderPolicy
      */
     public function view(User $user, Order $order)
     {
-        //
+        return $user->id == $order->user_id;
     }
 
     /**
@@ -41,7 +41,7 @@ class OrderPolicy
      */
     public function create(User $user)
     {
-        //
+        return true;
     }
 
     /**

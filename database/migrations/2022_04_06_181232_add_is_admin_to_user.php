@@ -13,10 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('products', function (Blueprint $table) {
-
-            $table->unsignedBigInteger('nutrition_info_id');
-            $table->foreign('nutrition_info_id')->references('id')->on('nutrition_infos');
+        Schema::table('users', function (Blueprint $table) {
+            $table->boolean('is_admin')->default(False);
         });
     }
 
@@ -27,9 +25,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('products', function (Blueprint $table) {
-            $table->dropForeign(['nutrition_info_id']);
-            $table->dropColumn('nutrition_info_id');
+        Schema::table('users', function (Blueprint $table) {
+            $table->dropColumn('is_admin');
         });
     }
 };
