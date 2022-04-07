@@ -10,9 +10,8 @@
 <style>A {text-decoration: none;} </style>
 <body>
     <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 border-bottom shadow-sm mb-3">
-        <h4 class="my-0 me-md-auto font-weight-normal">VeGains</h4>
+        <a href=" {{ route('home.index')}} " class="my-0 me-md-auto h4 font-weight-normal">VeGains</a>
         <nav class="my-2 my-md-0 me-md-3">
-            <a href=" {{ route('home.index')}} " class="p-2 text-dark">Home</a>
             <a href=" {{ route('products.index')}} " class="p-2 text-dark">Products</a>
 
             @guest
