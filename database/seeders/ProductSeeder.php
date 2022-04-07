@@ -46,6 +46,9 @@ class ProductSeeder extends Seeder
         $product = Product::factory()->beyondBurger()->create();
         $this->createNutritionInfo($product);
 
+        $product = Product::factory()->justEgg()->create();
+        $this->createNutritionInfo($product);
+
     }
 
 }

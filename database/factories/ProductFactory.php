@@ -135,4 +135,16 @@ class ProductFactory extends Factory
             ];
         });
     }
+    public function justEgg()
+    {
+        return $this->state(function (array $attributes)
+        {
+            return [
+                'name' => 'Just Egg',
+                'description' => $this->faker->paragraph(),
+                'price' => 7.49,
+                'image_url' => 'images/products/justEgg.png',
+            ];
+        });
+    }
 }

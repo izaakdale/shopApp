@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Laravel\Scout\Searchable;
@@ -38,5 +39,15 @@ class Product extends Model
         ];
 
         return $array;
+    }
+
+    public static function scopeAlphabetical(Builder $query)
+    {
+        return $query->orderBy('name', 'asc');
+    }
+
+    public static function scopePrice(Builder $query)
+    {
+        return $query->orderBy('price', 'asc');
     }
 }

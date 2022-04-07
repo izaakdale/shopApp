@@ -3,11 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Classes\Cart;
-use App\Models\NutritionInfo;
 use App\Models\Product;
-use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Redis;
 
 class ProductController extends Controller
 {
@@ -18,7 +15,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        return view('products.index', ['products' => Product::all()]);
+        return view('products.index', ['products' => Product::alphabetical()->get()]);
     }
 
     /**

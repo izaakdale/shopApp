@@ -32,7 +32,7 @@ class OrderController extends Controller
         }
         else
         {
-            $orders = $user->orders()->get();
+            $orders = $user->orders()->latest()->get();
         }
 
         return view('order.index', ['orders' => $orders]);
