@@ -8,6 +8,13 @@ require('./bootstrap');
 
 window.Vue = require('vue').default;
 
+// import algoliasearch from 'algoliasearch/lite';
+import Vue from 'vue';
+import SearchApp from "./searchApp.vue"
+import InstantSearch from 'vue-instantsearch';
+
+Vue.use(InstantSearch);
+
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -27,6 +34,12 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-const app = new Vue({
-    el: '#app',
+// const app = new Vue({
+//     el: '#searchApp',
+//     render: h => h(SearchApp),
+// });
+
+const searchApp = new Vue({
+    el: '#searchApp',
+    render: h => h(SearchApp),
 });
