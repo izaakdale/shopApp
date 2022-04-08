@@ -10,19 +10,19 @@
 <style>A {text-decoration: none;} </style>
 <body>
     <div id="app">
-        <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 border-bottom shadow-sm mb-3">
-            <a href=" {{ route('home.index')}} " class="my-0 me-md-auto h4 font-weight-normal">VeGains</a>
+        <div class="d-flex flex-column flex-md-row navFlex">
+            <a href=" {{ route('home.index')}} " class="my-0 me-md-auto h4 shopAppNavHome">VeGains</a>
             <nav class="my-2 my-md-0 me-md-3">
-                <a href=" {{ route('products.index')}} " class="p-2 text-dark">Products</a>
+                <a href=" {{ route('products.index')}} " class="shopAppNavElement">Products</a>
 
                 @guest
                     @if (Route::has('register'))
-                    <a href="{{route('register')}}" class="p-2 text-dark">Register</a>
+                    <a href="{{route('register')}}" class="shopAppNavElement">Register</a>
                     @endif
-                    <a href="{{route('login')}}" class="p-2 text-dark">Login</a>
+                    <a href="{{route('login')}}" class="shopAppNavElement">Login</a>
                 @else
-                    <a href="{{route('order.index')}}" class="p-2 text-dark">My Orders</a>
-                    <a href="{{route('logout')}}" class="p-2 text-dark"
+                    <a href="{{route('order.index')}}" class="p-2 shopAppNavElement">My Orders</a>
+                    <a href="{{route('logout')}}" class="shopAppNavElement"
                     onclick="event.preventDefault();document.getElementById('logout-form').submit();"
                     >Logout ({{ Auth::user()->name }})</a>
 
@@ -32,7 +32,7 @@
                     </form>
                 @endguest
 
-                <a href="{{ route('cart.index') }}">
+                <a href="{{ route('cart.index') }}" class="shopAppNavElement">
                     <img src="{{ URL('images/cart.png')}} " alt="Cart" class="cart">
                     <span>
                         @if(Session::has('cart'))

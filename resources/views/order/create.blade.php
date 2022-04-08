@@ -6,8 +6,9 @@
   <form action="{{ route('order.store') }}" method="post">
     @csrf
     @include('order.addressForm')
-    <div>
-      <input type="submit" class="btn btn-primary btn-block" value="Place">
+    <br>
+    <div class="">
+      <input type="submit" class="addToCartButton btn-block" value="Place">
     </div>
   </form>
 @endsection

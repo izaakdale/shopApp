@@ -8,6 +8,7 @@
     <div class="d-flex flex-column">
         @if ( count($orderItems) != 0  )
             <h3 class="cartTable">Cart Items</h3>
+            <br>
             <table class="cartTable">
                 <tr>
                     <th>Item</th>
@@ -32,9 +33,10 @@
                     @endif
                 @endforeach
             </table>
-            <a class="cartTable" href="{{ route('cart.empty') }}">Empty Cart</a>
-
-            <a class="cartTable" href="{{ route('order.create') }}">Place Order</a>
+            <br>
+            <a class="cartTable addToCartButton" href="{{ route('cart.empty') }}">Empty Cart</a>
+            <br>
+            <a class="cartTable addToCartButton" href="{{ route('order.create') }}">Place Order</a>
         @else
             <p class="cartTable">Empty Cart</p>
         @endif

@@ -11,7 +11,10 @@
     <div class="my-auto productIndex">
         <h1>{{$product->name}}</h1>
         <p class="text-muted">{{$product->description}}</p>
-        <a href="{{ route('product.addToCart', ['id' => $product->id])}}" class="btn btn-primary">Add to Cart</a>
+        <div class="d-flex flex-row row-cols-2">
+            <h4 class="my-auto">${{$product->price}}</h4>
+            <a href="{{ route('product.addToCart', ['id' => $product->id])}}" class="addToCartButton">Add to Cart</a>
+        </div>
     </div>
     <div class="my-auto">
         <div class="d-flex flex-column">
