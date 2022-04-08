@@ -13,7 +13,12 @@ class Product extends Model
 
     public function nutrition_info()
     {
-        return $this->hasOne('App\Models\NutritionInfo');
+        return $this->hasOne(NutritionInfo::class);
+    }
+
+    public function order_items()
+    {
+        return $this->belongsToMany(OrderItem::class);
     }
 
     /**

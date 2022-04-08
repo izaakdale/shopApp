@@ -19,7 +19,7 @@ class OrderItemSeeder extends Seeder
     {
         $orders = Order::all();
         $products = Product::all();
-        $orderItem = OrderItem::factory()->count(100)->make()->each(function($orderItem) use ($orders, $products)
+        $orderItem = OrderItem::factory()->count(3000)->make()->each(function($orderItem) use ($orders, $products)
         {
           $orderItem->order_id = $orders->random()->id;
           $orderItem->product_id = $products->random()->id;

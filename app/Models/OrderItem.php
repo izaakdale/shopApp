@@ -14,12 +14,12 @@ class OrderItem extends Model
 
     public function order()
     {
-        return $this->belongsTo('App\Models\Order');
+        return $this->belongsTo(Order::class);
     }
 
     public function product()
     {
-        return $this->hasOne('App\Models\Product');
+        return $this->hasOne(Product::class);
     }
 
     protected $fillable = [

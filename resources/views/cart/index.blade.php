@@ -10,7 +10,7 @@
             <h3 class="cartTable">Cart Items</h3>
             <br>
             <table class="cartTable">
-                <tr>
+                <tr class="row-cols-3 ">
                     <th>Item</th>
                     <th>Quantiy</th>
                     <th>Price</th>
@@ -33,8 +33,7 @@
                     @endif
                 @endforeach
             </table>
-            <br>
-            <a class="cartTable addToCartButton" href="{{ route('cart.empty') }}">Empty Cart</a>
+            <a class="cartTable" href="{{ route('cart.empty') }}">Empty Cart</a>
             <br>
             <a class="cartTable addToCartButton" href="{{ route('order.create') }}">Place Order</a>
         @else

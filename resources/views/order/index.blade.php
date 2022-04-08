@@ -1,8 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<br>
-    <div class="container">
+    <div class="container" height="6400px">
         <table class="ordersTable">
             <th>Order No</th>
             <th>Date Placed</th>
@@ -10,7 +9,7 @@
             <th></th>
 
         @foreach ($orders as $order)
-            <tr>
+            <tr class="row-cols-4" height="80px">
                 <td>
                     {{$order->id}}
                 </td>
@@ -26,6 +25,10 @@
             </tr>
         @endforeach
         </table>
+    </div>
+
+    <div class="d-flex justify-content-center">
+        {{ $orders->links() }}
     </div>
 
 @endsection

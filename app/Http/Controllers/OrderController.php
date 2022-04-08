@@ -28,11 +28,11 @@ class OrderController extends Controller
         $user = User::find(auth()->user()->id);
         if($user->is_admin)
         {
-            $orders = Order::all();
+            $orders = Order::all()->paginate(10);
         }
         else
         {
-            $orders = $user->orders()->latest()->get();
+            $orders = Order::where('user_id', $user->id)->latest()->paginate(6);
         }
 
         return view('order.index', ['orders' => $orders]);

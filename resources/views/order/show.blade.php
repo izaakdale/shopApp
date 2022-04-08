@@ -9,7 +9,7 @@
     
     @foreach ($orderItems as $item)
     
-    <tr>
+    <tr class="row-cols-3">
         <td>
             {{ $products->find($item->product_id)->name }} 
         </td>

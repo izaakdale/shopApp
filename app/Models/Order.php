@@ -12,12 +12,12 @@ class Order extends Model
 
     public function user()
     {
-        return $this->belongsTo('App\Models\User');
+        return $this->belongsTo(User::class);
     }
 
     public function orderItems()
     {
-        return $this->hasMany('App\Models\OrderItem');
+        return $this->hasMany(OrderItem::class);
     }
 
     protected $fillable = [
