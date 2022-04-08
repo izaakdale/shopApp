@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Classes\Cart;
+use App\Http\Requests\SearchProductRequest;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
@@ -103,5 +104,12 @@ class ProductController extends Controller
         $cart->removeItem($product->id);
         $request->session()->put('cart', $cart);
         return redirect( $request->server()['HTTP_REFERER'] );
+    }
+
+    public function search(SearchProductRequest $request)
+    {
+        $formInfo = $request->validated();
+        $hits = Product::search($formInfo['searchString'])->get();
+        return view('products.index', ['products' => $hits]);
     }
 }

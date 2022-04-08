@@ -29,3 +29,14 @@
     box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
     margin-bottom: 1rem !important;
 }
+
+input[type=text] {
+    width: 100%;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    background-color: white;
+    background-position: 10px 10px;
+    margin-right: 150px;
+    }
+

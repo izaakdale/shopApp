@@ -4,6 +4,7 @@ use App\Http\Controllers\CartController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
+use App\Models\Product;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -29,6 +30,8 @@ Route::get('/home', function () {
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 Route::resource('/products', ProductController::class)->only(['index', 'show']);
+Route::get('productSearch', [ProductController::class, 'search'])->name('product.search');
+
 Route::get('/addToCart/{id}',[ProductController::class, 'addToCart'])->name("product.addToCart");
 Route::get('/removeFromCart/{id}',[ProductController::class, 'removeFromCart'])->name("product.removeFromCart");
 
