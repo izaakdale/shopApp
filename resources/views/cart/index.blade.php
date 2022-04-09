@@ -8,7 +8,6 @@
     <div class="d-flex flex-column">
         @if ( count($orderItems) != 0  )
             <h3 class="cartTable">Cart Items</h3>
-            <br>
             <table class="cartTable">
                 <tr class="row-cols-3 ">
                     <th>Item</th>

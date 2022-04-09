@@ -16,3 +16,17 @@
 .ordersTr:nth-child(even) {
   background-color: #dddddd;
 }
+
+.orderSuccessBadge{
+  display: inline-block;
+  padding: 0.35em 0.35em;
+  font-size: 1.1em;
+  font-weight: 700;
+  line-height: 1;
+  color: rgba(12, 5, 111, 0.4);
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: 0.25rem;
+  margin-left: 124px;
+}

@@ -4889,7 +4889,7 @@ textarea.form-control-lg {
   font-size: 0.75em;
   font-weight: 700;
   line-height: 1;
-  color: #fff;
+  color: rgba(12, 5, 111, 0.4);
   text-align: center;
   white-space: nowrap;
   vertical-align: baseline;

@@ -1,7 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
+
+
     <div class="container" height="6400px">
+        @badge
+        Your orders
+        @endbadge
+
         <table class="ordersTable">
             <th>Order No</th>
             <th>Date Placed</th>

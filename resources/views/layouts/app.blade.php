@@ -14,7 +14,7 @@
             <a href=" {{ route('home.index')}} " class="my-0 me-md-auto h4 shopAppNavHome">VeGains</a>
             <form class="my-auto me-3" action="{{route('product.search')}}">
                 <div><form>
-                    <input class="navSeachBar" type="text" name="searchString" placeholder="Search..">
+                    <input class="navSeachBar" type="text" name="searchString" placeholder="Search products...">
                   </form>
                 </div>
             </form>

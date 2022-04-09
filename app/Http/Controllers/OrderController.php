@@ -100,7 +100,7 @@ class OrderController extends Controller
         $orderItems = $order->orderItems()->get();
         $products = Product::findMany($orderItems->pluck('product_id'));
 
-        return view('order.show', ['orderItems' => $orderItems, 'products' => $products]);
+        return view('order.show', ['order' => $order, 'orderItems' => $orderItems, 'products' => $products]);
 
     }
 
